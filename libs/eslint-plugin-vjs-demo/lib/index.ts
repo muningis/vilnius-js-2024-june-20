@@ -1,9 +1,5 @@
-import { rules } from "./rules/index";
+import { hardConst } from './rules/hard-const';
 
-export default {
-  meta: {
-    name: 'eslint-plugin-vjs-demo',
-    version: '0.0.1',
-  },
-  rules: rules
+export const rules = {
+  'hard-const': hardConst
 };

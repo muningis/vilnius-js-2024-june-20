@@ -4,7 +4,7 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
-    "lint": "eslint \"packages/ast-examples/**\""
+    "lint": "eslint \"packages/ast-examples/src/**\""
   },
   "devDependencies": {
     "@types/bun": "^1.1.3",
@@ -12,7 +12,6 @@
     "@typescript-eslint/rule-tester": "6.21.0",
     "@typescript-eslint/types": "6.21.0",
     "@typescript-eslint/utils": "6.21.0",
-    "bun-types": "1.1.13",
     "eslint": "8.57.0",
     "eslint-plugin-vjs-demo": "*",
     "turbo": "latest",

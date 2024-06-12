@@ -36,3 +36,15 @@ turbo runner -- --script=parse
 cd packages/ast-examples/ \
 bun ./index.mts --script=parse
 ```
+
+### ESLint
+
+#### 1. Build `eslint-plugin-vsj-demo`
+```sh
+turbo build
+```
+
+#### 2. Run lint
+```sh
+turbo lint
+```
