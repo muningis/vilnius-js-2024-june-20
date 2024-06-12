@@ -1,0 +1,16 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "vjs-demo"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "packages/ast-examples/src/**/*.mts"
+      ],
+      "rules": {
+        "vjs-demo/hard-const": "error"
+      }
+    }
+  ]
+}

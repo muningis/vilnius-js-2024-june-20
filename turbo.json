@@ -2,6 +2,8 @@
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": [],
   "tasks": {
-    "runner": {}
+    "build": {},
+    "runner": {},
+    "test": {}
   }
 }
