@@ -1,0 +1,11 @@
+{
+  "name": "ast-examples",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "runner": "bun ./index.mts"
+  },
+  "dependencies": {
+    "acorn": "8.11.3"
+  }
+}
