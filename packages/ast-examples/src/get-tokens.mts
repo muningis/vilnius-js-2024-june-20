@@ -2,13 +2,15 @@ import { Token, tokenizer } from "acorn";
 
 const JSON_SPACING = "  ";
 
+const MINUTES_IN_DAY = 24 * 60;
+
 export default function getTokens() {
-  const code = '3.14 * (2 + 3)';
-  const tokens: Token[] = [];
+  let code = '3.14 * (2 + 3)';
+  let tokens: Token[] = [];
   for (let token of tokenizer(code, { ecmaVersion: "latest" })) {
     tokens.push(token);
   }
-  const jsonifiedTokens = JSON.stringify(tokens, null, JSON_SPACING);
+  let jsonifiedTokens = JSON.stringify(tokens, null, JSON_SPACING);
 
   return jsonifiedTokens;
 }

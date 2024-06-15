@@ -14,10 +14,11 @@ export const hardConst = createRule({
     },
     type: 'problem',
     messages: {
-      "issue:missing-identifier": "const must have an identifier",
-      "issue:bad-pattern": "const can only start with A-Z and can only contain A-Z and _",
-      "issue:non-static": "const variables can only contain static values",
-      "issue:must-be-at-root": 'const variables can only be top-level declarations'
+      "issue:missing-identifier": "const must have an identifier.",
+      "issue:bad-pattern": "const can only start with `A-Z` and can only contain `A-Z` and `_`.",
+      "issue:non-static": "const variables can only contain static values.",
+      "issue:must-be-at-root": 'const variables can only be top-level declarations.',
+      "issue:missing-type": 'const variables must have type definition',
     },
     schema: [],
   },
@@ -44,6 +45,15 @@ export const hardConst = createRule({
             })
             return;
           }
+          console.log(declaration.id.typeAnnotation);
+          if (!("typeAnnotation" in declaration.id) || typeof declaration.id.typeAnnotation === "undefined") {
+            context.report({
+              node,
+              messageId: 'issue:missing-type',
+            })
+            return;
+          }
+
 
           if (!ALLOWED_CONST_NAME_PATTERN.test(declaration.id.name) || DISALLOWED_CHARACTERS.test(declaration.id.name)) {
             context.report({
